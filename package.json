@@ -1,0 +1,22 @@
+{
+  "name": "tasktracker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "css": "npx @tailwindcss/cli -i ./src/css/input.css -o ./src/css/output.css --watch",
+    "build": "vite build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@tailwindcss/cli": "^4.3.0",
+    "quill": "^2.0.3",
+    "tailwindcss": "^4.3.0"
+  },
+  "devDependencies": {
+    "vite": "^8.0.14"
+  }
+}
