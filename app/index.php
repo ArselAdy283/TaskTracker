@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Task Tracker</title>
     <link rel="stylesheet" href="../src/css/output.css">
     <link
         rel="stylesheet"
@@ -26,13 +26,13 @@
                 Test
             </h1>
             <button
-                class="fixed bottom-10 right-10 w-20 h-20 rounded-2xl bg-blue-200 dark:bg-blue-950 text-black dark:text-white border border-gray-300 dark:border-gray-800 hover:scale-110 transition cursor-pointer">
+                onclick="window.location.href = 'add_task.php'"
+                class="fixed bottom-10 right-10 w-20 h-20 rounded-2xl bg-blue-300 dark:bg-blue-950 text-black dark:text-white border border-gray-300 dark:border-gray-800 hover:scale-110 transition cursor-pointer">
                 <i class="ph-bold ph-plus text-2xl"></i>
             </button>
         </main>
     </div>
-    <script src="../src/js/app.js"></script>
-
+    <script src="../src/js/theme_toggle.js"></script>
 </body>
 
 </html>

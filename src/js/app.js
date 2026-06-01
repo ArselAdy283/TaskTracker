@@ -1,41 +1,30 @@
-//THEME TOGGLE
-const themeToggle = document.getElementById("theme-toggle");
-const themeIcon = document.getElementById("theme-icon");
+import Quill from 'quill';
+import "quill/dist/quill.snow.css";
 
-if (localStorage.theme === "dark") {
+var toolbarOptions = [
+    ["bold", "italic", "underline", "strike"], // toggled buttons
+    ["blockquote", "code-block"],
 
-    document.documentElement.classList.add("dark");
-    
-    themeToggle.title = "Light Mode";
-    themeIcon.classList.remove("ph-moon");
-    themeIcon.classList.add("ph-sun");
+    [{ header: 1 }, { header: 2 }], // custom button values
+    [{ list: "ordered" }, { list: "bullet" }],
+    [{ script: "sub" }, { script: "super" }], // superscript/subscript
+    [{ indent: "-1" }, { indent: "+1" }], // outdent/indent
+    [{ direction: "rtl" }], // text direction
 
-} else {
+    [{ size: ["small", false, "large", "huge"] }], // custom dropdown
+    [{ header: [1, 2, 3, 4, 5, 6, false] }],
 
-    document.documentElement.classList.remove("dark");
+    [{ color: [] }, { background: [] }], // dropdown with defaults
+    [{ font: [] }],
+    [{ align: [] }],
 
-    themeToggle.title = "Dark Mode";
-    themeIcon.classList.remove("ph-sun");
-    themeIcon.classList.add("ph-moon");
-}
+    ["clean"], // remove formatting button
+];
 
-themeToggle.addEventListener("click", () => {
-
-    document.documentElement.classList.toggle("dark");
-
-    if (document.documentElement.classList.contains("dark")) {
-
-        localStorage.theme = "dark";
-        themeToggle.title = "Light Mode";
-        themeIcon.classList.remove("ph-moon");
-        themeIcon.classList.add("ph-sun");
-
-    } else {
-
-        localStorage.theme = "light";
-        themeToggle.title = "Dark Mode";
-        themeIcon.classList.remove("ph-sun");
-        themeIcon.classList.add("ph-moon");
-    }
-
+var quill = new Quill("#editor", {
+    modules: {
+        toolbar: toolbarOptions,
+    },
+    theme: "snow",
+    placeholder: "Enter Task Details..."
 });

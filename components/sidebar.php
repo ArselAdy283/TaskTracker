@@ -7,19 +7,19 @@
         <nav>
             <ul class="space-y-2">
                 <li>
-                    <a href="#" class="block px-4 py-3 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-800 transition">
+                    <a href="#" class="block px-4 py-3 rounded-lg hover:bg-blue-300 dark:hover:bg-blue-950 transition">
                         Today
                     </a>
                 </li>
 
                 <li>
-                    <a href="#" class="block px-4 py-3 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-800 transition">
+                    <a href="#" class="block px-4 py-3 rounded-lg hover:bg-blue-300 dark:hover:bg-blue-950 transition">
                         All Tasks
                     </a>
                 </li>
 
                 <li>
-                    <a href="#" class="block px-4 py-3 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-800 transition">
+                    <a href="#" class="block px-4 py-3 rounded-lg hover:bg-blue-300 dark:hover:bg-blue-950 transition">
                         Done
                     </a>
                 </li>
