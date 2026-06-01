@@ -21,10 +21,17 @@ var toolbarOptions = [
     ["clean"], // remove formatting button
 ];
 
-var quill = new Quill("#editor", {
+window.quill = new Quill("#editor", {
     modules: {
         toolbar: toolbarOptions,
     },
     theme: "snow",
     placeholder: "Enter Task Details..."
+});
+
+const form = document.getElementById("task-form");
+
+form.addEventListener("submit", () => {
+    document.getElementById("task-details").value =
+        quill.root.innerHTML;
 });

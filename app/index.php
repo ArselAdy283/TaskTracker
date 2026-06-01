@@ -26,7 +26,7 @@
                 Test
             </h1>
             <button
-                onclick="window.location.href = 'add_task.php'"
+                onclick="window.location.href = 'create-task.php'"
                 class="fixed bottom-10 right-10 w-20 h-20 rounded-2xl bg-blue-300 dark:bg-blue-950 text-black dark:text-white border border-gray-300 dark:border-gray-800 hover:scale-110 transition cursor-pointer">
                 <i class="ph-bold ph-plus text-2xl"></i>
             </button>
