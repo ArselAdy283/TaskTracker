@@ -38,7 +38,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
         taskDetails.value = quill.root.innerHTML;
 
-        // Hapus draft setelah berhasil submit
         localStorage.removeItem("task_name");
         localStorage.removeItem("task_details");
     });

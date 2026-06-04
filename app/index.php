@@ -1,3 +1,9 @@
+<?php
+
+$page = $_GET['page'] ?? 'today';
+
+?>
+
 <!DOCTYPE html>
 <html lang="en" class="dark">
 
@@ -21,10 +27,28 @@
         <?php include '../components/sidebar.php'; ?>
 
         <!-- CONTENT -->
-        <main class="flex-1 p-8 pt-20">
-            <h1 class="text-black dark:text-white">
-                Test
-            </h1>
+        <main class="flex p-8 pt-23 w-300">
+            <?php
+
+            switch ($page) {
+                case 'today':
+                    include '../components/read_today.php'; 
+                    break;
+
+                case 'all':
+                    include '../components/read_all.php';
+                    break;
+
+                case 'done':
+                    include '../components/read_done.php';
+                    break;
+
+                default:
+                    include '../components/read_all.php';
+                    break;
+            }
+
+            ?>
             <button
                 onclick="window.location.href = 'create-task.php'"
                 class="fixed bottom-10 right-10 w-20 h-20 rounded-2xl bg-blue-300 dark:bg-blue-950 text-black dark:text-white border border-gray-300 dark:border-gray-800 hover:scale-110 transition cursor-pointer">
@@ -32,7 +56,10 @@
             </button>
         </main>
     </div>
+    <script type="module" src="http://localhost:5173/src/js/app.js"></script>
     <script src="../src/js/theme_toggle.js"></script>
+    <script src="../src/js/list_animation.js"></script>
+
 </body>
 
 </html>

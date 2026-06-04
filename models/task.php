@@ -14,11 +14,8 @@ class Task
         $stmt = $this->db->prepare(
             "INSERT INTO tasks (task_name, task_details) VALUES (?, ?)"
         );
-        $stmt->bind_param(
-            "ss",
-            $task_name,
-            $task_details
-        );
+        $stmt->bind_param("ss", $task_name, $task_details);
+
         return $stmt->execute();
     }
 
@@ -57,5 +54,17 @@ class Task
         $result = $stmt->get_result();
 
         return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
+    //UPDATE STATUS
+    public function toggleStatus(int $id): bool
+    {
+        $stmt = $this->db->prepare(
+            "UPDATE tasks SET status = IF(status = 1, 0, 1) WHERE id = ?"
+        );
+
+        $stmt->bind_param("i", $id);
+
+        return $stmt->execute();
     }
 }
