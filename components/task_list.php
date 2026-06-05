@@ -32,13 +32,13 @@
             <div class="flex items-center gap-3">
                 <!-- EDIT -->
                 <a href="edit-task.php?id=<?= $task['id'] ?>" onclick="event.stopPropagation()"
-                    class="text-blue-300 dark:text-gray-600 hover:scale-110 transition">
+                    class="text-blue-300 dark:text-gray-500 hover:scale-110 transition">
                     <i class="ph-bold ph-pencil-simple text-xl"></i>
                 </a>
 
                 <!-- ARROW -->
                 <i
-                    class="ph-bold ph-caret-down text-blue-300 dark:text-gray-600 text-lg arrow transition-transform duration-300"></i>
+                    class="ph-bold ph-caret-down text-blue-300 dark:text-gray-500 text-lg arrow transition-transform duration-300"></i>
             </div>
         </div>
 
