@@ -94,7 +94,7 @@ if (!$task) {
                 Edit
             </button>
 
-            <form action="../actions/delete.php" method="POST" onsubmit="return confirm('Hapus task ini?')" class="flex gap-5 flex-row-reverse">
+            <form action="../actions/delete.php" method="POST" class="flex gap-5 flex-row-reverse delete-form">
                 <input
                 type="hidden"
                 name="id"
@@ -124,6 +124,7 @@ if (!$task) {
     </script>
 
     <script type="module" src="http://localhost:5173/src/js/app.js"></script>
+    <script type="module" src="http://localhost:5173/src/js/sweetalert.js"></script>
     <script src="../src/js/theme_toggle.js"></script>
     <script src="../src/js/local_storage.js"></script>
 
