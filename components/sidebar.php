@@ -13,32 +13,28 @@ function navClass(string $currentPage, string $page): string
 
 ?>
 
-<div class="flex min-h-screen">
+<aside id="sidebar" class="hidden md:block fixed md:relative md:h-screen h-full w-64 bg-white dark:bg-gray-900 text-black dark:text-white p-5 border-r border-gray-300 dark:border-gray-800">
+    <h1 class="text-2xl font-bold mb-8">My App</h1>
 
-    <!-- SIDEBAR -->
-    <aside class="w-64 bg-white dark:bg-gray-900 text-black dark:text-white p-5 border-r border-gray-300 dark:border-gray-800">
-        <h1 class="text-2xl font-bold mb-8">My App</h1>
+    <nav>
+        <ul class="space-y-2">
+            <li>
+                <a href="index.php?page=today" class="<?= navClass($page, 'today') ?>">
+                    Today
+                </a>
+            </li>
 
-        <nav>
-            <ul class="space-y-2">
-                <li>
-                    <a href="index.php?page=today" class="<?= navClass($page, 'today') ?>">
-                        Today
-                    </a>
-                </li>
+            <li>
+                <a href="index.php?page=all" class="<?= navClass($page, 'all') ?>">
+                    All Tasks
+                </a>
+            </li>
 
-                <li>
-                    <a href="index.php?page=all" class="<?= navClass($page, 'all') ?>">
-                        All Tasks
-                    </a>
-                </li>
-
-                <li>
-                    <a href="index.php?page=done" class="<?= navClass($page, 'done') ?>">
-                        Done
-                    </a>
-                </li>
-            </ul>
-        </nav>
-    </aside>
-</div>
+            <li>
+                <a href="index.php?page=done" class="<?= navClass($page, 'done') ?>">
+                    Done
+                </a>
+            </li>
+        </ul>
+    </nav>
+</aside>

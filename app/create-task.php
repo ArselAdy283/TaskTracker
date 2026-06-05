@@ -11,33 +11,62 @@
         rel="stylesheet"
         type="text/css"
         href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/bold/style.css" />
+
 </head>
 
 <body class="bg-white dark:bg-gray-950">
 
     <?php include '../components/appbar.php'; ?>
 
-    <main class="flex flex-col items-center justify-center pt-20">
+    <main class="flex flex-col items-center justify-center pt-20 px-4">
 
-        <form action="../actions/create.php" method="POST" id="task-form">
+        <form action="../actions/create.php" method="POST" id="task-form" class="w-full max-w-200">
+
             <div class="flex flex-col items-center justify-center">
-                <label for="task-name" class="text-black dark:text-white text-2xl font-bold m-5 w-200">Task Name</label>
-                <input id="task-name" name="task_name" type="text" required placeholder="Enter Task Name..." class="placeholder:italic placeholder:text-sm dark:placeholder:text-gray-500 text-black dark:text-white bg-white dark:bg-gray-900 h-10 w-200 p-5 border border-gray-300 dark:border-gray-800 rounded-2xl">
+                <label
+                    for="task-name"
+                    class="text-black dark:text-white text-2xl font-bold m-5 w-full">
+                    Task Name
+                </label>
+
+                <input
+                    id="task-name"
+                    name="task_name"
+                    type="text"
+                    required
+                    placeholder="Enter Task Name..."
+                    class="placeholder:italic placeholder:text-sm dark:placeholder:text-gray-500 text-black dark:text-white bg-white dark:bg-gray-900 h-10 w-full p-5 border border-gray-300 dark:border-gray-800 rounded-2xl">
             </div>
 
             <div class="flex flex-col items-center justify-center">
-                <label class="text-black dark:text-white text-left text-2xl font-bold m-5 w-200">Task Details</label>
-                <div class="bg-white dark:bg-gray-900 w-200 h-70 rounded-2xl overflow-hidden flex flex-col">
+                <label
+                    class="text-black dark:text-white text-left text-2xl font-bold m-5 w-full">
+                    Task Details
+                </label>
+
+                <div class="bg-white dark:bg-gray-900 w-full min-h-48 md:min-h-70 rounded-2xl overflow-hidden flex flex-col border border-gray-300 dark:border-gray-800">
                     <div id="editor"></div>
                 </div>
 
                 <input type="hidden" name="task_details" id="task-details">
             </div>
 
-            <div class="flex w-200 flex-row-reverse gap-5 m-10">
-                <button type="submit" class="bg-blue-300 dark:bg-blue-950 text-black dark:text-white p-2 w-30 rounded-2xl border border-gray-300 dark:border-gray-800 hover:scale-110 transition cursor-pointer">Save</button>
-                <button id="cancel-btn" type="button" onclick="window.location.href = 'index.php'" class="bg-gray-200 dark:bg-gray-900 text-black dark:text-white p-2 w-30 rounded-2xl border border-gray-300 dark:border-gray-800 hover:scale-110 transition cursor-pointer">Cancel</button>
+            <div class="flex w-full flex-row-reverse gap-5 mt-10 flex-wrap">
+                <button
+                    type="submit"
+                    class="bg-blue-300 dark:bg-blue-950 text-black dark:text-white p-2 w-30 rounded-2xl border border-gray-300 dark:border-gray-800 hover:scale-110 transition cursor-pointer">
+                    Save
+                </button>
+
+                <button
+                    id="cancel-btn"
+                    type="button"
+                    onclick="window.location.href = 'index.php'"
+                    class="bg-gray-200 dark:bg-gray-900 text-black dark:text-white p-2 w-30 rounded-2xl border border-gray-300 dark:border-gray-800 hover:scale-110 transition cursor-pointer">
+                    Cancel
+                </button>
             </div>
+
         </form>
     </main>
 

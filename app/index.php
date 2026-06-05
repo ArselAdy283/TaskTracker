@@ -51,12 +51,13 @@ $page = $_GET['page'] ?? 'today';
             ?>
             <button
                 onclick="window.location.href = 'create-task.php'"
-                class="fixed bottom-10 right-10 w-20 h-20 rounded-2xl bg-blue-300 dark:bg-blue-950 text-black dark:text-white border border-gray-300 dark:border-gray-800 hover:scale-110 transition cursor-pointer">
+                class="fixed bottom-5 right-5 md:bottom-10 md:right-10 w-15 h-15 md:w-20 md:h-20 rounded-2xl bg-blue-300 dark:bg-blue-950 text-black dark:text-white border border-gray-300 dark:border-gray-800 hover:scale-110 transition cursor-pointer">
                 <i class="ph-bold ph-plus text-2xl"></i>
             </button>
         </main>
     </div>
     <script type="module" src="http://localhost:5173/src/js/app.js"></script>
+    <script src="../src/js/responsive.js"></script>
     <script src="../src/js/theme_toggle.js"></script>
     <script src="../src/js/list_animation.js"></script>
 

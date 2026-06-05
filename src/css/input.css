@@ -5,7 +5,10 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
-/* TOOLBAR */
+/* =========================
+   QUILL TOOLBAR
+   ========================= */
+
 .ql-toolbar.ql-snow {
     position: sticky;
     top: 0;
@@ -16,7 +19,16 @@
     border-top-left-radius: 1rem;
     border-top-right-radius: 1rem;
 
-    flex-shrink: 0;
+    /* Responsive */
+    width: 100%;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+    padding: 8px;
+}
+
+.ql-toolbar.ql-snow .ql-formats {
+    flex-wrap: wrap;
+    margin-right: 8px;
 }
 
 .dark .ql-toolbar.ql-snow {
@@ -24,24 +36,60 @@
     border-color: var(--color-gray-800) !important;
 }
 
-/* CONTAINER */
+/* Layar sangat kecil: toolbar scroll horizontal */
+@media (max-width: 400px) {
+    .ql-toolbar.ql-snow {
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    .ql-toolbar.ql-snow .ql-formats {
+        flex-wrap: nowrap;
+    }
+}
+
+/* =========================
+   QUILL CONTAINER
+   ========================= */
+
 .ql-container.ql-snow {
     border-color: var(--color-gray-300) !important;
     border-bottom-left-radius: 1rem;
     border-bottom-right-radius: 1rem;
 
     height: calc(100% - 70px);
+
+    /* Responsive */
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 1rem;
 }
 
 .dark .ql-container.ql-snow {
     border-color: var(--color-gray-800) !important;
 }
 
+/* =========================
+   QUILL EDITOR
+   ========================= */
+
 .ql-container .ql-editor {
     height: 100%;
     overflow-y: auto;
-
     color: black;
+
+    /* Responsive */
+    width: 100%;
+    box-sizing: border-box;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    min-height: 180px;
+}
+
+@media (min-width: 768px) {
+    .ql-container .ql-editor {
+        min-height: 240px;
+    }
 }
 
 .dark .ql-editor {
@@ -52,7 +100,10 @@
     color: var(--color-gray-500);
 }
 
-/* TOOLBAR ICON */
+/* =========================
+   QUILL TOOLBAR ICONS
+   ========================= */
+
 .dark .ql-snow .ql-stroke {
     stroke: var(--color-gray-400);
 }
@@ -64,6 +115,21 @@
 .dark .ql-snow .ql-picker,
 .dark .ql-snow .ql-picker-label {
     color: var(--color-gray-400);
+}
+
+.dark .ql-snow .ql-picker-options {
+    background-color: var(--color-gray-900);
+    border-color: var(--color-gray-800);
+}
+
+.dark .ql-snow button:hover .ql-stroke,
+.dark .ql-snow .ql-active .ql-stroke {
+    stroke: white;
+}
+
+.dark .ql-snow button:hover .ql-fill,
+.dark .ql-snow .ql-active .ql-fill {
+    fill: white;
 }
 
 /* =========================
@@ -93,7 +159,6 @@
 ::-webkit-scrollbar-thumb {
     background: var(--color-gray-300);
     border-radius: 9999px;
-
     border: 2px solid transparent;
     background-clip: padding-box;
 }
@@ -116,10 +181,7 @@
     display: none;
 }
 
-/* =========================
-   DARK MODE
-   ========================= */
-
+/* Dark mode scrollbar */
 .dark ::-webkit-scrollbar-track {
     background: transparent;
 }
